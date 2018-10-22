@@ -17,6 +17,7 @@ function overBoundary1() {
     lose = true;
     let boundary = document.querySelector("div#maze div.boundary");
     boundary.classList.add("youlose");
+    document.getElementById("status").innerHTML = "You lost....";
 }
 
 function overBoundary() {
@@ -26,15 +27,16 @@ function overBoundary() {
 
         boundaries[i].classList.add("youlose");
     } 
+    document.getElementById("status").innerHTML = "You lost....";
 }
 
 function atEnd() {
     if(lose) {
 
-        document.getElementById("status").innerHTML = "You lost....";
+        return document.getElementById("status").innerHTML = "You lost....";
     } else {
 
-        document.getElementById("status").innerHTML = "You win!!! ";
+        return document.getElementById("status").innerHTML = "You win!!! ";
     }
 }
 
@@ -45,6 +47,7 @@ function restart() {
 
         boundaries[i].classList.remove("youlose");
     }
+    document.getElementById("status").innerHTML = "Do your best to make it to the end";
 }
 
 function cheatCheck() {
@@ -54,6 +57,7 @@ function cheatCheck() {
 
         boundaries[i].classList.add("youlose");
     }
+    document.getElementById("status").innerHTML = "You are cheating, stay in the maze! Unless you're going back to the start, then that's fine.";
 }
 
 
