@@ -27,6 +27,7 @@ function overBoundary() {
 
         boundaries[i].classList.add("youlose");
     } 
+    
     document.getElementById("status").innerHTML = "You lost....";
 }
 
@@ -47,6 +48,7 @@ function restart() {
 
         boundaries[i].classList.remove("youlose");
     }
+
     document.getElementById("status").innerHTML = "Do your best to make it to the end";
 }
 
@@ -57,6 +59,7 @@ function cheatCheck() {
 
         boundaries[i].classList.add("youlose");
     }
+
     document.getElementById("status").innerHTML = "You are cheating, stay in the maze! Unless you're going back to the start, then that's fine.";
 }
 
