@@ -2,12 +2,14 @@ var lose = false;
 
 window.onload = ()=> {
     document.getElementById("boundary1").onmouseover = overBoundary1;
-    document.getElementById("end").onmouseover = atEnd;
+    
     let boundaries = document.querySelectorAll("div#maze div.boundary");
     for (var i = 0; i < boundaries.length; i++) {
 
         boundaries[i].onmouseover = overBoundary;
     }
+    document.getElementById("end").onmouseover = atEnd;
+    document.getElementById("start").onclick = restart;
     
 };
 
@@ -31,7 +33,15 @@ function atEnd() {
 
         document.getElementById("status").innerHTML = "You lost....";
     } else {
-        
+
         document.getElementById("status").innerHTML = "You win!!! ";
+    }
+}
+
+function restart() {
+    lose = false;
+    let boundaries = document.querySelectorAll("div#maze div.boundary");
+    for (var i = 0; i < boundaries.length; i++) {
+        boundaries[i].classList.remove("youlose");
     }
 }
