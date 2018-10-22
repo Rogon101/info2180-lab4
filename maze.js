@@ -31,10 +31,10 @@ function overBoundary() {
 function atEnd() {
     if(lose) {
 
-        document.getElementById("status").innerHTML = "You lost....";
+        alert("You lost....")
     } else {
 
-        document.getElementById("status").innerHTML = "You win!!! ";
+        alert("You win!!! ")
     }
 }
 
@@ -45,3 +45,4 @@ function restart() {
         boundaries[i].classList.remove("youlose");
     }
 }
+
