@@ -10,7 +10,7 @@ window.onload = ()=> {
     }
     document.getElementById("end").onmouseover = atEnd;
     document.getElementById("start").onclick = restart;
-    
+    document.getElementById("maze").onmouseleave = cheatCheck;
 };
 
 function overBoundary1() {
@@ -31,10 +31,10 @@ function overBoundary() {
 function atEnd() {
     if(lose) {
 
-        alert("You lost....")
+        document.getElementById("status").innerHTML = "You lost....";
     } else {
 
-        alert("You win!!! ")
+        document.getElementById("status").innerHTML = "You win!!! ";
     }
 }
 
@@ -42,7 +42,19 @@ function restart() {
     lose = false;
     let boundaries = document.querySelectorAll("div#maze div.boundary");
     for (var i = 0; i < boundaries.length; i++) {
+
         boundaries[i].classList.remove("youlose");
     }
 }
+
+function cheatCheck() {
+    lose = true;
+    let boundaries = document.querySelectorAll("div#maze div.boundary");
+    for (var i = 0; i < boundaries.length; i++) {
+
+        boundaries[i].classList.add("youlose");
+    }
+}
+
+
 
